@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#universe {
+	background: #000;
+    background: radial-gradient(#555, #000);
+}
+
+#stars {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+	background: url(../images/stars.png);
+    
+    -webkit-animation: starPulse 4s infinite alternate;
+    
+    animation: starPulse 4s infinite alternate;
+}
+
+#sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    margin-top: -80px;
+    margin-left: -80px;
+	height: 160px;
+    width: 160px;
+    border-radius: 100%;
+    background: orange;
+    background: radial-gradient(#f5c313, #ec7e08);
+    -webkit-box-shadow: 0 0 50px #f5c91a;
+    box-shadow: 0 0 50px #f5c91a;
+    -webkit-animation: sunFlare 4s infinite alternate;
+    animation: sunFlare 4s infinite alternate;
+}
+
+#earthOrbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    z-index: 20;
+/*	border: solid 1px red;*/
+    height: 400px;
+    width: 500px;
+    border-radius: 100%;
+    -webkit-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+    
+}
+
+#earthOrbit > img {
+	height: 64px;
+    width: 64px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -32px;
+    margin-left: -32px;
+    -webkit-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite;
+}
+
+#moonOrbit {
+/*	border: solid 1px red;*/
+    position: absolute;
+    top: 50%;
+    left: -48px;
+    margin-top: -48px;
+    z-index: 20;
+    width: 96px;
+    height: 96px;
+    border-radius: 100%;
+    -webkit-animation: rotate 5s linear infinite reverse;
+    animation: rotate 5s linear infinite reverse;
+}
+
+#moon {
+	height: 20px;
+    width: 20px;
+    background: gray;
+    background: radial-gradient(#ddd, #888);
+    border-radius: 100%;
+}
+
+@-webkit-keyframes starPulse {
+    from { opacity: 1; }
+    to { opacity: 0.2; }
+}
+
+@keyframes starPulse {
+    from { opacity: 1; }
+    to { opacity: 0.8; }
+}
+
+@-webkit-keyframes sunFlare {
+    from {
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+        box-shadow: 0 0 50px #f5c91a;
+    }
+    to {
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+        box-shadow: 0 0 100px #f5c91a;
+    }
+}
+
+@keyframes sunFlare {
+    from {
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+        box-shadow: 0 0 50px #f5c91a;
+    }
+    to {
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+        box-shadow: 0 0 100px #f5c91a;
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    } to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    } to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
